@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.mvvm_retrofit_java.R;
-import com.mvvm_retrofit_java.adapter.BasgboardNewsAdapter;
+import com.mvvm_retrofit_java.adapter.MovieArticleAdapter;
 import com.mvvm_retrofit_java.model.Article;
 import com.mvvm_retrofit_java.view_model.ArticleViewModel;
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private ArrayList<Article> articleArrayList = new ArrayList<>();
     ArticleViewModel articleViewModel;
-    private BasgboardNewsAdapter adapter;
+    private MovieArticleAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         recycler_view.setHasFixedSize(true);
 
         // adapter
-        adapter = new BasgboardNewsAdapter(MainActivity.this, articleArrayList);
+        adapter = new MovieArticleAdapter(MainActivity.this, articleArrayList);
         recycler_view.setAdapter(adapter);
 
         // View Model
